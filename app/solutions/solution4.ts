@@ -14,7 +14,7 @@ class Range {
     }
 
     public overlaps(other: Range): boolean {
-        return this.isNumberInRange(other.low) || this.isNumberInRange(other.high) || this.includes(other) || other.includes(this);
+        return this.isNumberInRange(other.low) || this.isNumberInRange(other.high) || other.includes(this);
     }
 
     private isNumberInRange(number: number): boolean {
