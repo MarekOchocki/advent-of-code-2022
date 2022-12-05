@@ -1,4 +1,4 @@
-import { solution4, solution4_2 } from './solutions/solution4';
+import { solution5, solution5_2 } from './solutions/solution5';
 
-solution4();
-solution4_2();
+solution5();
+solution5_2();
