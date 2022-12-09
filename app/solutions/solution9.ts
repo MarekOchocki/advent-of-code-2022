@@ -33,28 +33,7 @@ function moveTail(headPos: number[], tailPos: number[]): void {
     }
 }
 
-function performLine(line: string, visitedPositions: number[][], headPos: number[], tailPos: number[]): void {
-    const direction = line.split(' ')[0];
-    const movesCount = Number.parseInt(line.split(' ')[1]);
-    for(let i = 0; i < movesCount; i++) {
-        if(direction === "R") {
-            headPos[0]++;
-        }
-        if(direction === "U") {
-            headPos[1]--;
-        }
-        if(direction === "L") {
-            headPos[0]--;
-        }
-        if(direction === "D") {
-            headPos[1]++;
-        }
-        moveTail(headPos, tailPos);
-        visitPosition(tailPos, visitedPositions);
-    }
-}
-
-function performLine2(line: string, visitedPositions: number[][], linePos: number[][]): void {
+function performLine(line: string, visitedPositions: number[][], linePos: number[][]): void {
     const direction = line.split(' ')[0];
     const movesCount = Number.parseInt(line.split(' ')[1]);
     for(let i = 0; i < movesCount; i++) {
@@ -70,28 +49,27 @@ function performLine2(line: string, visitedPositions: number[][], linePos: numbe
         if(direction === "D") {
             linePos[0][1]++;
         }
-        for(let i = 0; i < 9; i++) {
+        for(let i = 0; i < linePos.length - 1; i++) {
             moveTail(linePos[i], linePos[i + 1]);
         }
-        visitPosition(linePos[9], visitedPositions);
+        visitPosition(linePos[linePos.length - 1], visitedPositions);
     }
 }
 
-export function printSolution9() {
-    const input = fs.readFileSync('./app/res/input9.txt').toString();
-    const visitedPositions: number[][] = [[0, 0]];
-    const headPos: number[] = [0, 0];
-    const tailPos: number[] = [0, 0];
-    input.split('\n').forEach(line => performLine(line, visitedPositions, headPos, tailPos));
-    console.log(visitedPositions.length);
-}
-
-export function printSolution9_2() {
+function printSolutionForLine(length: number): void {
     const input = fs.readFileSync('./app/res/input9.txt').toString();
     const visitedPositions: number[][] = [[0, 0]];
     const linePos: number[][] = [];
-    for(let i = 0; i < 10; i++)
+    for(let i = 0; i < length; i++)
         linePos.push([0, 0]);
-    input.split('\n').forEach(line => performLine2(line, visitedPositions, linePos));
+    input.split('\n').forEach(line => performLine(line, visitedPositions, linePos));
     console.log(visitedPositions.length);
+}
+
+export function printSolution9() {
+    printSolutionForLine(2);
+}
+
+export function printSolution9_2() {
+    printSolutionForLine(10);
 }
