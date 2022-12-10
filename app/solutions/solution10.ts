@@ -12,13 +12,9 @@ export function printSolutions10() {
     let pixels: string = "";
     let sum = 0;
     addends.forEach((a, i) => {
-        if((i+21) % 40 === 0) {
-            sum += register * (i + 1);
-        }
+        sum += (i+21) % 40 ? 0 : register * (i + 1);
         pixels += getPixel(i, register);
-        if((i+1) % 40 === 0) {
-            pixels += '\n';
-        }
+        pixels += (i+1) % 40 ? '' : '\n';
         register += a;
     });
     console.log(sum);
