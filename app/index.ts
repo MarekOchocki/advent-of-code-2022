@@ -1,3 +1,4 @@
-import { printSolutions10 } from './solutions/solution10';
+import { printSolution11, printSolution11_2 } from './solutions/solution11';
 
-printSolutions10();
+printSolution11();
+printSolution11_2();
