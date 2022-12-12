@@ -57,7 +57,7 @@ function performLine(line: string, visitedPositions: number[][], linePos: number
 }
 
 function printSolutionForLine(length: number): void {
-    const input = fs.readFileSync('./app/res/input9.txt').toString();
+    const input = fs.readFileSync('./app/res/week2/input9.txt').toString();
     const visitedPositions: number[][] = [[0, 0]];
     const linePos: number[][] = [];
     for(let i = 0; i < length; i++)
@@ -66,10 +66,15 @@ function printSolutionForLine(length: number): void {
     console.log(visitedPositions.length);
 }
 
-export function printSolution9() {
+function printSolution9Part1() {
     printSolutionForLine(2);
 }
 
-export function printSolution9_2() {
+function printSolution9Part2() {
     printSolutionForLine(10);
+}
+
+export function printSolutions9() {
+    printSolution9Part1();
+    printSolution9Part2();
 }

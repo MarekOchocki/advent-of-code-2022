@@ -67,8 +67,8 @@ class Monkey {
     }
 }
 
-export function printSolution11() {
-    const inputContent = fs.readFileSync('./app/res/input11.txt').toString();
+function printSolution11Part1() {
+    const inputContent = fs.readFileSync('./app/res/week2/input11.txt').toString();
     const monkeys = inputContent.split('Monkey').slice(1).map(desc => new Monkey(desc));
     for(let i = 0; i < 20; i++) {
         monkeys.forEach(m => m.makeTurn(monkeys));
@@ -77,12 +77,17 @@ export function printSolution11() {
     console.log(monkeys[0].inspectTimes * monkeys[1].inspectTimes);
 }
 
-export function printSolution11_2() {
-    const inputContent = fs.readFileSync('./app/res/input11.txt').toString();
+function printSolution11Part2() {
+    const inputContent = fs.readFileSync('./app/res/week2/input11.txt').toString();
     const monkeys = inputContent.split('Monkey').slice(1).map(desc => new Monkey(desc));
     for(let i = 0; i < 10000; i++) {
         monkeys.forEach(m => m.makeTurnWithBigNumbers(monkeys));
     }
     monkeys.sort((a, b) => b.inspectTimes - a.inspectTimes);
     console.log(monkeys[0].inspectTimes * monkeys[1].inspectTimes);
+}
+
+export function printSolutions11() {
+    printSolution11Part1();
+    printSolution11Part2();
 }

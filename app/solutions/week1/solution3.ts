@@ -28,8 +28,8 @@ function letterToScore(letter: string): number {
     return letter.charCodeAt(0) - 'A'.charCodeAt(0) + 27;
 }
 
-export function solution3() {
-    const inputContent = fs.readFileSync('./app/res/input3.txt').toString();
+function printSolution3Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input3.txt').toString();
     let score = 0;
     inputContent.split('\n').forEach(line => {
         const firstPart = line.slice(0, line.length / 2);
@@ -40,8 +40,8 @@ export function solution3() {
     console.log(score);
 }
 
-export function solution3_2() {
-    const inputContent = fs.readFileSync('./app/res/input3.txt').toString();
+function printSolution3Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input3.txt').toString();
     let score = 0;
     const lines = inputContent.split('\n')
     for(let i = 0; i < lines.length; i += 3) {
@@ -52,4 +52,9 @@ export function solution3_2() {
         score += letterToScore(repeatingLetter);
     }
     console.log(score);
+}
+
+export function printSolutions3() {
+    printSolution3Part1();
+    printSolution3Part2();
 }

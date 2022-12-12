@@ -84,8 +84,8 @@ function findSmallest(directories: Directory[]): Directory {
     return smallest;
 }
 
-export function solution7() {
-    const inputContent = fs.readFileSync('./app/res/input7.txt').toString();
+export function printSolution7Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input7.txt').toString();
     const topDirectory = new Directory('/', null); 
     let currentDirectory: Directory = topDirectory;
 
@@ -100,8 +100,8 @@ export function solution7() {
     console.log(sum);
 }
 
-export function solution7_2() {
-    const inputContent = fs.readFileSync('./app/res/input7.txt').toString();
+export function printSolution7Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input7.txt').toString();
     const topDirectory = new Directory('/', null); 
     let currentDirectory: Directory = topDirectory;
 
@@ -117,4 +117,9 @@ export function solution7_2() {
     const directoriesWithEnoughSize = topDirectory.getDirectoriesAboveThresholdDeep(neededSpace);
     const smallestDir = findSmallest(directoriesWithEnoughSize);
     console.log(smallestDir.getSize());
+}
+
+export function printSolutions7() {
+    printSolution7Part1();
+    printSolution7Part2();
 }

@@ -5,7 +5,7 @@ function getPixel(cycleNumber: number, registerValue: number): string {
 }
 
 export function printSolutions10() {
-    const inputContent = fs.readFileSync('./app/res/input10.txt').toString();
+    const inputContent = fs.readFileSync('./app/res/week2/input10.txt').toString();
     
     const addends = inputContent.split('\n').flatMap(l => l.startsWith('noop') ? 0 : [0, Number.parseInt(l.split(' ')[1])]);
     let register = 1;

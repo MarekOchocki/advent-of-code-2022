@@ -40,16 +40,21 @@ class RangePair {
     }
 }
 
-export function solution4() {
-    const inputContent = fs.readFileSync('./app/res/input4.txt').toString();
+function printSolution4Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input4.txt').toString();
     const lines = inputContent.split('\n');
     const result = lines.reduce((sum, line) => sum + (new RangePair(line).doesOnePairIncludeTheOther() ? 1 : 0), 0);
     console.log(result);
 }
 
-export function solution4_2() {
-    const inputContent = fs.readFileSync('./app/res/input4.txt').toString();
+function printSolution4Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input4.txt').toString();
     const lines = inputContent.split('\n');
     const result = lines.reduce((sum, line) => sum + (new RangePair(line).doPairsOverlap() ? 1 : 0), 0);
     console.log(result);
+}
+
+export function printSolutions4() {
+    printSolution4Part1();
+    printSolution4Part2();
 }

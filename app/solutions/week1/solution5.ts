@@ -64,8 +64,8 @@ function createStacks(lines: string[]): Stack[] {
     return stacks;
 }
 
-export function solution5() {
-    const inputContent = fs.readFileSync('./app/res/input5.txt').toString();
+function printSolution5Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input5.txt').toString();
     
     const lines = inputContent.split('\n');
     const stacks = createStacks(lines);
@@ -80,8 +80,8 @@ export function solution5() {
     console.log(topBoxesString);
 }
 
-export function solution5_2() {
-    const inputContent = fs.readFileSync('./app/res/input5.txt').toString();
+function printSolution5Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input5.txt').toString();
     
     const lines = inputContent.split('\n');
     const stacks = createStacks(lines);
@@ -94,4 +94,9 @@ export function solution5_2() {
     const topBoxesList = stacks.map(stack => stack.popBox());
     const topBoxesString = topBoxesList.reduce((p, c) => p + c, '');
     console.log(topBoxesString);
+}
+
+export function printSolutions5() {
+    printSolution5Part1();
+    printSolution5Part2();
 }

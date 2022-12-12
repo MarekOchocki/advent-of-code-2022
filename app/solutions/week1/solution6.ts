@@ -10,8 +10,8 @@ function isMarkerInPosition(signal: string, position: number, numberOfPlacesToCh
     return true;
 }
 
-export function solution6() {
-    const inputContent = fs.readFileSync('./app/res/input6.txt').toString();
+export function printSolution6Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input6.txt').toString();
     
     for(let i = 3; i < inputContent.length; i++) {
         if(isMarkerInPosition(inputContent, i, 4)) {
@@ -21,8 +21,8 @@ export function solution6() {
     }
 }
 
-export function solution6_2() {
-    const inputContent = fs.readFileSync('./app/res/input6.txt').toString();
+export function printSolution6Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input6.txt').toString();
     
     for(let i = 13; i < inputContent.length; i++) {
         if(isMarkerInPosition(inputContent, i, 14)) {
@@ -30,4 +30,9 @@ export function solution6_2() {
             return;
         }
     }
+}
+
+export function printSolutions6() {
+    printSolution6Part1();
+    printSolution6Part2();
 }

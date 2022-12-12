@@ -73,8 +73,8 @@ function noteToResult(note: string): Result {
     return Result.WIN;
 }
 
-export function solution2() {
-    const inputContent = fs.readFileSync('./app/res/input2.txt').toString();
+function printSolution2Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input2.txt').toString();
     let score = 0;
     inputContent.split('\n').forEach(line => {
         const elfChoice = elfChoiceToEnum(line.split(' ')[0]);
@@ -85,8 +85,8 @@ export function solution2() {
     console.log(score);
 }
 
-export function solution2_2() {
-    const inputContent = fs.readFileSync('./app/res/input2.txt').toString();
+function printSolution2Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input2.txt').toString();
     let score = 0;
     inputContent.split('\n').forEach(line => {
         const elfChoice = elfChoiceToEnum(line.split(' ')[0]);
@@ -95,4 +95,9 @@ export function solution2_2() {
         score += yourChoiceToScore(yourChoice) + resultToScore(result);
     });
     console.log(score);
+}
+
+export function printSolutions2() {
+    printSolution2Part1();
+    printSolution2Part2();
 }

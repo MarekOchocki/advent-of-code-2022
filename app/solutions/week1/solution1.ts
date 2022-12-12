@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
-export function solution1() {
-    const inputContent = fs.readFileSync('./app/res/input1.txt').toString();
+function printSolution1Part1() {
+    const inputContent = fs.readFileSync('./app/res/week1/input1.txt').toString();
     
     let max3Sum = 0;
     let max2Sum = 0;
@@ -22,8 +22,8 @@ export function solution1() {
     console.log(max1Sum);
 }
 
-export function solution1_2() {
-    const inputContent = fs.readFileSync('./app/res/input1.txt').toString();
+function printSolution1Part2() {
+    const inputContent = fs.readFileSync('./app/res/week1/input1.txt').toString();
     
     let max3Sum = 0;
     let max2Sum = 0;
@@ -42,4 +42,9 @@ export function solution1_2() {
         }
     });
     console.log(max1Sum + max2Sum + max3Sum);
+}
+
+export function printSolutions1() {
+    printSolution1Part1();
+    printSolution1Part2();
 }

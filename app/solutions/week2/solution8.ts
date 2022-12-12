@@ -129,14 +129,19 @@ function inputToForest(input: string): Forest {
 }
 
 
-export function solution8() {
-    const inputContent = fs.readFileSync('./app/res/input8.txt').toString();
+function printSolution8Part1() {
+    const inputContent = fs.readFileSync('./app/res/week2/input8.txt').toString();
     let forest = inputToForest(inputContent);
     console.log(forest.getCountOfVisibleTrees());
 }
 
-export function solution8_2() {
-    const inputContent = fs.readFileSync('./app/res/input8.txt').toString();
+function printSolution8Part2() {
+    const inputContent = fs.readFileSync('./app/res/week2/input8.txt').toString();
     let forest = inputToForest(inputContent);
     console.log(forest.getMaxScenicScore());
+}
+
+export function printSolutions8() {
+    printSolution8Part1();
+    printSolution8Part2();
 }
