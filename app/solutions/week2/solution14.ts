@@ -29,8 +29,6 @@ class Grid {
     private sandElementsCount = 0;
     private lowestRockYPos = 0;
     private useFloor = false;
-    public startPosition = new Vector2();
-    public endPosition = new Vector2();
 
     public constructor() {
         const inputContent = fs.readFileSync('./app/res/week2/input14.txt').toString();

@@ -1,4 +1,4 @@
 import { printAllSolutions } from './solutions/all-solutions';
-import { printSolutions14 } from './solutions/week2/solution14';
+import { printSolutions15 } from './solutions/week3/solution15';
 
-printSolutions14();
+printSolutions15();
